@@ -12,7 +12,10 @@ def encoder(plaintext, shift):
 	print(plaintext.translate(table))
 
 def decoder(plaintext, shift):
-	return
+	alphabet = string.ascii_lowercase
+	current_alphabet = alphabet[int(shift):] + alphabet[:int(shift)]
+	table = string.maketrans(current_alphabet, alphabet)
+	print(plaintext.translate(table))
 
 def usage():
 	print('Format: pycaesar [text] [shift] [mode: d/e]')
@@ -25,9 +28,8 @@ def main():
 		if len(sys.argv) < 4:
 			usage()
 			sys.exit(1)
-		opts, args = getopt.getopt(sys.argv[3:], "hde", ["help", 
-        												"decode", 
-        												"encode",])
+		opts, args = getopt.getopt(
+			sys.argv[3:], "hde", ["help", "decode", "encode",])
 	except getopt.GetoptError as err:
 		# print help information and exit:
 		# will print something like "option -a not recognized"
