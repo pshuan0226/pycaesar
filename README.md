@@ -1,8 +1,9 @@
 # pycaesar
 A self-attempt of writing a caesar cipher decoder/encoder in python
-pycaesar supports decode with unknown shift
 
-## format
+(pycaesar supports decode with unknown shift)
+
+## Command Line Format
 ```
 usage: pycaesar.py [-h] [-s SHIFT] [-e] [-d] text
 
